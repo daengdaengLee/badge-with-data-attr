@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Badge with data attribute</title>
+    <style>
+        html, body {
+            margin: 0;
+        }
+
+        .row {
+            height: 4rem;
+
+            margin: 0.4rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            box-sizing: border-box;
+            border: 1px solid black;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+        .skyblue {
+            background-color: skyblue;
+        }
+        .green {
+            background-color: green;
+        }
+        .grey {
+            background-color: grey;
+        }
+
+        .square {
+            display: inline-block;
+
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .badge[data-badge]::after {
+            font-family: monospace, "sans-serif";
+            font-size: 0.8rem;
+            content: attr(data-badge);
+
+            position: relative;
+            top: -0.8rem;
+            right: -1rem;
+
+            display: inline-flex;
+            height: 1.8rem;
+            justify-content: center;
+            align-items: center;
+
+            padding: 0 0.6rem;
+
+            color: white;
+            background-color: red;
+
+            border-radius: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <span class="square grey badge"></span>
+            <span class="square yellow badge" data-badge="3"></span>
+            <span class="square green badge" data-badge="33"></span>
+            <span class="square skyblue badge" data-badge="333"></span>
+        </div>
+    </div>
+</body>
+</html>
